@@ -5,8 +5,8 @@ import Navbar from "./components/Navbar";
 import SideNav from "./components/SideNav";
 
 export const metadata: Metadata = {
-  title: "Weather App",
-  description: "Search and Compare city weather",
+  title: "Arigato Demo App",
+  description: "Used Industrial Machinery Exporter Japan",
 };
 
 interface RootLayoutProps {
