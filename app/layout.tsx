@@ -9,10 +9,6 @@ export const metadata: Metadata = {
   description: "Used Industrial Machinery Exporter Japan",
 };
 
-interface RootLayoutProps {
-  children: ReactNode;
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{

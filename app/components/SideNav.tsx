@@ -35,14 +35,6 @@ const SideNav: React.FC = () => {
     }
   };
 
-  // Effect to add click event listener when component mounts
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   // Function to toggle sidebar visibility
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -50,22 +42,14 @@ const SideNav: React.FC = () => {
 
   return (
     <div
-      ref={sideNavRef}
-      className={`w-64 bg-gray-800 p-4 flex flex-col relative ${
+      className={`w-full sm:w-64 bg-gray-800 p-4 flex flex-col relative sm:block ${
         isOpen ? "block" : "hidden"
-      } sm:block`}
+      }`}
     >
       <div className="mb-8 flex justify-between items-center">
         <h1 className="text-2xl font-bold text-white">Demo App</h1>
-        <button
-          className="text-white sm:hidden"
-          onClick={toggleSidebar}
-          aria-label="Toggle Sidebar"
-        >
-          <MdMenu className="h-6 w-6" />
-        </button>
       </div>
-      <div className="mb-8">
+      <div className="mb-3">
         <ul className="space-y-4">
           <Link
             href="/#"
@@ -135,7 +119,7 @@ const SideNav: React.FC = () => {
             ></textarea>
             <button
               type="submit"
-              className="mt-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md focus:outline-none"
+              className="mt-2 text-lg py-2 px-4 bg-white text-gray-800 rounded-lg focus:outline-none"
             >
               Send
             </button>
